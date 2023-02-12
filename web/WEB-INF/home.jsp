@@ -1,7 +1,7 @@
 <%-- 
     Document   : home
     Created on : 11-Feb-2023, 2:56:20 PM
-    Author     : Chris
+    Author     : Christian
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Home Page</h1>
-        
-        <a href="logout">Log out</a>
+        <h2>Hello ${username}</h2><br>
+        <a href="login?logout">Log out</a>
     </body>
 </html>

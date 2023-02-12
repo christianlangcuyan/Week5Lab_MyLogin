@@ -1,7 +1,7 @@
 <%-- 
     Document   : login
     Created on : 11-Feb-2023, 2:55:42 PM
-    Author     : Chris
+    Author     : Christian
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,16 +13,12 @@
     </head>
     <body>
         <h1>Login</h1>
-        <<form action="action" method="">
-            Username: <input type="text" name="username"><br>
-            Password: <input type="text" name="password"><br>
+        <form action="login" method="post">
+            Username: <input type="text" name="username" value="${username}"><br>
+            Password: <input type="password" name="password" value="${password}"><br>
             
-            
+            <input type="Submit" value="Log in">
+            <p>${result}</p>
         </form> 
-       
-       
-       
-       
-        
     </body>
 </html>

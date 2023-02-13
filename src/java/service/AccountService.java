@@ -5,13 +5,13 @@ import models.User;
  *
  * @author Christian
  */
-public class AccountService {
+public class AccountService extends User {
     public User login(String username, String password) {
-        if((username.equals("abe")|| username.equals("barb"))&& password.equals("password")) {
-            User user = new User(username, null);
-            return user;
-        } else {
+        if(username.equals("abe")&& password.equals("password") || 
+                username.equals("barb") && password.equals("password")){
+            return new User(username,null);
+        }else{
             return null;
-        }
+            }
     }
 }

@@ -18,13 +18,14 @@ public class HomeServlet extends HttpServlet {
             throws ServletException, IOException {
         
         HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
-        if(username != null && !username.isEmpty()) {
-            getServletContext().getRequestDispatcher("/WEB-INF/home.jsp")
+        User user = (User) session.getAttribute("user");
+        if(user == null) {
+            response.sendRedirect("/Week5Lab_MyLogin/login");
+            return;
+        } 
+        request.setAttribute("user", user);
+        getServletContext().getRequestDispatcher("/WEB-INF/home.jsp")
                 .forward(request, response);
-        } else {
-            response.sendRedirect("login");
-        }
     }
     
     @Override
